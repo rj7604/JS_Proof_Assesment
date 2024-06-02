@@ -15,6 +15,11 @@ let nfts = [];
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
 function mintNFT(name, fav_fruit, Birth_Place, Eye_Color) {
+    // Ensure all parameters are provided
+    if (!name || !fav_fruit || !Birth_Place || !Eye_Color) {
+        console.error("Error: All parameters are required to mint an NFT.");
+        return;
+    }
     let nft = {
         name: name,
         fav_fruit: fav_fruit,
@@ -27,6 +32,11 @@ function mintNFT(name, fav_fruit, Birth_Place, Eye_Color) {
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs() {
+    if (nfts.length == 0) {
+        console.log("No NFTs minted yet.");
+        return;
+    }
+    console.log("List of minted NFTs:\n");
     let index = 1;
     for (const nft of nfts) {
         console.log("NFT: "+ index);
@@ -40,7 +50,7 @@ function listNFTs() {
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
- return nfts.length;
+    return nfts.length;
 }
 
 // call your functions below this line
@@ -50,4 +60,5 @@ mintNFT("NAMAN JAIN", "Apple", "India", "Grey");
 
 listNFTs();
 console.log("Total no. of minted NFTs:", getTotalSupply());
+
 
