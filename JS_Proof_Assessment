@@ -46,6 +46,7 @@ function getTotalSupply() {
 // call your functions below this line
 mintNFT("RISHABH JAIN", "Lychee", "India", "Black");
 mintNFT("SAGAR JAIN", "Mango", "India", "Dark Brown");
+mintNFT("NAMAN JAIN", "Apple", "India", "Grey");
 
 listNFTs();
 console.log("Total no. of minted NFTs:", getTotalSupply());
